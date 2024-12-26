@@ -3,21 +3,25 @@
 const arrowClass = document.querySelectorAll('.arrow');
 let clickCount = 1;
 
+// Determine the base URL dynamically
+const baseURL = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/') + 'images/';
+
 arrowClass.forEach((arrow) => {
-    arrow.addEventListener('click', function(){
-        if(this.id === 'left-arrow'){
-            if(clickCount === 1){
+    arrow.addEventListener('click', function() {
+        if (this.id === 'left-arrow') {
+            if (clickCount === 1) {
                 clickCount = 5;
             }
             clickCount -= 1;
         } else {
-            if(clickCount === 4){
+            if (clickCount === 4) {
                 clickCount = 0;
             }
             clickCount += 1;
         }
-        document.getElementById('active-image').src = `./images/image-product-${clickCount}.jpg`;
-})});
+        document.getElementById('active-image').src = `${baseURL}image-product-${clickCount}.jpg`;
+    });
+});
 
 // Increeasing and decreasing the quantity of the product
 const signClass = document.querySelectorAll('.sign');
