@@ -51,10 +51,20 @@ addToCart.addEventListener('click', function(){
 // Showing the cart
 const cartIcon = document.querySelector('.cart-icon');
 cartIcon.addEventListener('click', function(){
-    if(quantity.textContent != 0){
-        document.querySelector('.cart').style.display = 'block';
+    if(document.querySelector('.cart').style.display === 'none'){
+        if(Number(document.querySelector('.cart-count').textContent) !== 0){
+            document.querySelector('.cart').style.display = 'block';
+        }else{
+            document.querySelector('.main-cart').innerHTML = '<p class="center">Your cart is empty</p>';
+            document.querySelector('.cart').style.display = 'block';
+        }
     }else{
-        document.querySelector('.main-cart').innerHTML = '<p class="center">Your cart is empty</p>';
-        document.querySelector('.cart').style.display = 'block';
+        document.querySelector('.cart').style.display = 'none';
     }
 })
+
+// Closing the cart
+const checkoutButton = document.getElementById('checkout-button');
+checkoutButton.addEventListener('click', function(){
+    document.querySelector('.cart').style.display = 'none';
+});

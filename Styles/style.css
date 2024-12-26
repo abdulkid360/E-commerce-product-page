@@ -183,7 +183,7 @@ main {
         position: absolute;
         z-index: 2;
         background: var(--white);
-        width: 95%;
+        width: min(95%, 400px);
         display: flex;
         display: none;
         justify-content: center;

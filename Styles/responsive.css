@@ -42,7 +42,8 @@
     }
 
     header {
-        /* padding: 0 !important; */
+        width: 90%;
+        padding: 15px 30px;
         margin-bottom: 40px;
         border-bottom: var(--border);
 
@@ -119,6 +120,11 @@
 
     }
 
+    .cart{
+        /* background: var(--grayish-blue) !important; */
+        right: 10% !important;
+        transform: translate(80%, -50%) !important;
+    }
     main {
         .main-body {
             flex-direction: row;
@@ -149,7 +155,6 @@
                         border: 2px solid var(--light-grayish-blue);
                         overflow: hidden !important;
                         width: 110px;
-                        height: 110px;
 
                         &:hover {
                             cursor: pointer;
@@ -162,6 +167,7 @@
                             border-radius: var(--border-radius);
                             width: 100%;
                             height: 100%;
+                            aspect-ratio: 5/4;
                         }
                     }
                 }
@@ -214,7 +220,6 @@
             .price-calc {
                 display: flex;
                 justify-content: space-between;
-                /* border: var(--border); */
             }
 
             .product-number {
