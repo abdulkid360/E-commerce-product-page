@@ -101,12 +101,18 @@
                     </p>
                   </div>
                   <div class="cart-item-remove">
-                    <img src="images/icon-delete.svg" alt="delete" />
+                    <img id="reset-cart" src="images/icon-delete.svg" alt="delete" />
                   </div>
                 </div>
                 <div class="checkout pad">
                   <button id="checkout-button">Checkout</button>
                 </div>
+              </div>
+            </div>
+            <div class="hidden">
+              <h2 class="pad">Cart</h2>
+              <div class="main-cart">
+                <p class="center">Your cart is empty</p>
               </div>
             </div>
           </div>
@@ -279,11 +285,11 @@
                 <p class="original-price">$250.00</p>
               </div>
               <div class="price-calc">
-                <div class="product-number">
-                  <div class="minus sign">-</div>
-                  <div class="count">0</div>
-                  <div class="plus sign">+</div>
-                </div>
+                <span class="product-number">
+                  <button class="minus sign">-</button>
+                  <span class="count">0</span>
+                  <button class="plus sign">+</button>
+                </span>
                 <div class="add-to-cart">
                   <button id="add-to-cart-button">
                     <svg

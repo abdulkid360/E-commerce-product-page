@@ -56,7 +56,7 @@ body {
     overflow: auto;
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +64,10 @@ body {
     font-size: .9rem;
     margin: 20px 0;
     padding: 50px 0;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Header */
@@ -85,6 +89,15 @@ header {
             svg {
                 font-size: 1.5rem;
                 color: var(--very-dark-blue);
+                & path{
+                    fill: var(--grayish-blue);
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+                &:hover path {
+                    fill: var(--very-dark-blue);
+                }
             }
 
             .cart-count {
@@ -125,16 +138,21 @@ header {
         align-items: center;
 
         .menu-toggle {
-            display: none; /* Hide the checkbox */
+            display: none;
+            /* Hide the checkbox */
         }
 
-        .menu-toggle:checked ~ .menu {
-            left: 0; /* Show the menu when the menu-toggle checkbox is checked */
-            display: block; /* Show the menu when the menu-toggle checkbox is checked */
+        .menu-toggle:checked~.menu {
+            left: 0;
+            /* Show the menu when the menu-toggle checkbox is checked */
+            display: block;
+            /* Show the menu when the menu-toggle checkbox is checked */
         }
-        .logo{
+
+        .logo {
             display: none;
         }
+
         .menu {
             position: absolute;
             top: 0 !important;
@@ -148,7 +166,7 @@ header {
             padding: 25px;
             transition: left 0.3s ease;
 
-            nav{
+            nav {
                 display: flex;
                 flex-direction: column;
                 row-gap: 25px;
@@ -287,9 +305,14 @@ main {
 
     .main-body {
         display: flex;
+        justify-content: center;
         flex-direction: column;
         position: relative;
-        .light-box{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 500px;
+
+        .light-box {
             display: none;
             flex-direction: column;
             row-gap: 20px;
@@ -304,7 +327,8 @@ main {
             justify-content: center;
             align-items: center;
             border: var(--border);
-            .inner-light{
+
+            .inner-light {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -313,27 +337,33 @@ main {
                 position: relative;
                 padding-top: 30px;
             }
-            #close-icon{
+
+            #close-icon {
                 position: absolute;
                 top: 0;
                 right: 0;
-                &:hover{
+
+                &:hover {
                     color: var(--orange);
                     cursor: pointer;
                 }
-                &:hover path{
+
+                &:hover path {
                     fill: var(--orange);
                 }
-                & path{
+
+                & path {
                     fill: var(--white);
                 }
             }
-            #light-active{
+
+            #light-active {
                 object-fit: cover;
                 aspect-ratio: 10/9;
                 border-radius: var(--border-radius);
             }
-            .arrows-class{
+
+            .arrows-class {
                 position: absolute;
                 width: 100%;
                 display: flex;
@@ -352,25 +382,30 @@ main {
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
-                    &:hover svg path{
+
+                    &:hover svg path {
                         stroke: var(--orange);
                     }
+
                     svg {
                         color: var(--very-dark-blue);
                         font-size: 1.5rem;
                     }
                 }
             }
-            .thumb{
+
+            .thumb {
                 background-color: var(--white);
                 border-radius: var(--border-radius);
             }
+
             .thumb-light {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 column-gap: 10px;
                 margin-top: 20px;
                 padding: 0 20px;
+
                 img {
                     vertical-align: top;
                     width: 100%;
@@ -378,22 +413,25 @@ main {
                     object-fit: cover;
                     border-radius: var(--border-radius);
                     cursor: pointer;
-                    &:hover{
+
+                    &:hover {
                         filter: opacity(60%);
                     }
                 }
+
                 /* justify-content: space-around;
                 box-sizing: border-box !important;
                 align-items: center; */
             }
-            
-            .active-thumb{
-                img{
+
+            .active-thumb {
+                img {
                     border: 3px solid var(--orange) !important;
                     opacity: 0.5;
                 }
             }
         }
+
         .active-product-container img {
             width: 100%;
             height: auto;
@@ -402,7 +440,7 @@ main {
             position: relative;
         }
 
-        .active-product-container{
+        .active-product-container {
             .thumbnails {
                 display: none;
             }
@@ -509,7 +547,7 @@ main {
                 transform: translateY(50%);
             }
         }
-        
+
         .product-number {
             display: flex;
             column-gap: 10px;
@@ -522,19 +560,28 @@ main {
             color: var(--orange);
             border-radius: var(--border-radius);
             margin-bottom: 15px;
+            vertical-align: 0;
+            border: none;
 
             .plus,
             .minus {
                 cursor: pointer;
                 font-size: 1.5rem;
                 display: inline;
-                &:active{
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                all: unset;
+
+                &:active {
                     background-color: var(--light-grayish-blue) !important;
                 }
-                &:hover{
+
+                &:hover {
                     background-color: var(--light-grayish-blue) !important;
                 }
-                &:focus{
+
+                &:focus {
                     background-color: var(--light-grayish-blue) !important;
                 }
             }
